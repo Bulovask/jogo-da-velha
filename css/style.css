@@ -1,0 +1,36 @@
+body {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	height: 100vh;
+}
+
+main {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	width: 90vmin;
+	height: 90vmin;
+}
+
+main :nth-child(2n + 1) {
+	background-color: #edb;
+}
+
+.cell {
+	color: #900;
+	background-color: #fec;
+	border-radius: 0;
+	border-color: black;
+	font: 20vmin Monospace;
+	transition: 0.25s;
+}
+
+.cell:active {
+	background-color: #dca;
+	color: #090;
+	transform: scale(0.9);
+	transition: 0.25s;
+}
