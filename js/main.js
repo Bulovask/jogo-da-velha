@@ -17,9 +17,19 @@ const c3 = $("#c3");
 const cells = document.querySelectorAll(".cell");
 
 //Variaveis do jogo
+var modo = confirm("Dois Jogadores humanos? ");
+var player1;
+var player2;
+var j;
+
 let vez = "player1";
-var player1 = prompt("Player1 digite seu nome: ") || "Player 1";
-var player2 = prompt("Player2 digite seu nome: ") || "Player 2";
+if(modo) {
+	player1 = prompt("Player1 digite seu nome: ") || "Player 1";
+	player2 = prompt("Player2 digite seu nome: ") || "Player 2";
+}
+else {
+	j = confirm("Quer ser o Player1?");
+}
 
 //Função chamada toda vez que uma célula é clicada
 function clickCell(e) {
@@ -90,3 +100,17 @@ function clickCell(e) {
 for(let i = 0; i < cells.length; i++) {
 	cells[i].setAttribute("onclick", "clickCell(this)");
 }
+
+
+//INTELIGENCIA ARTIFICIAL
+const options = [a1, a2, a3, b1, b2, b3, c1, c2, c3];
+function IA() {
+	requestAnimationFrame(IA);
+	ia = j ? "player2" : "player1";
+	if(vez == ia) {
+		const o = (Math.random() * 9) | 0;
+		clickCell(options[o]);
+	}
+}
+
+IA();
