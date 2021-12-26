@@ -29,6 +29,14 @@ if(modo) {
 }
 else {
 	j = confirm("Quer ser o Player1?");
+	if(j) {
+		player1 = prompt("Player1 digite seu nome: ")
+		player2 = "IA";
+	}
+	else {
+		player2 = prompt("Player2 digite seu nome: ")
+		player1 = "IA";
+	}
 }
 
 //Função chamada toda vez que uma célula é clicada
