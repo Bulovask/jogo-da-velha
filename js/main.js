@@ -41,11 +41,11 @@ else {
 
 //Função chamada toda vez que uma célula é clicada
 function clickCell(e) {
-	if(vez == "player1" && e.value == " ") {
+	if(vez == "player1" && e.value == " " && player1 != 'IA') {
 		e.value = "x";
 		vez = "player2";
 	}
-	else if(vez == "player2" && e.value == " ") {
+	else if(vez == "player2" && e.value == " " && player2 != 'IA') {
 		e.value = "o";
 		vez = "player1";
 	}
@@ -121,4 +121,6 @@ function IA() {
 	}
 }
 
-IA();
+if(!modo) {
+	IA();
+}
